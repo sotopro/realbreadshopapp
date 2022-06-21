@@ -40,7 +40,13 @@ const MainNavigator = () => {
           title: route.params.title,
         })}
       />
-      <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+      <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetailsScreen}
+        options={({ route }) => ({
+          title: route.params.name,
+        })}
+      />
     </Stack.Navigator>
   );
 };
