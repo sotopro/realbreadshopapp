@@ -1,17 +1,20 @@
 import React from "react";
 import { FlatList, TouchableOpacity, Text, View } from "react-native";
-import { cart } from "../../data/cart";
 import { CartItem } from "../../components";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItem, confirmCart } from "../../store/actions/cart.action";
 import { styles } from "./styles";
 
 const CartScreen = () => {
-  const total = 12050;
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.items);
+  const total = useSelector((state) => state.cart.total);
   const onHandlerDeleteItem = (id) => {
-    console.log(id);
+    dispatch(removeItem(id));
   };
 
   const onHandlerConfirmCart = () => {
-    console.log("Confirm cart");
+    dispatch(confirmCart(cart, total));
   };
   const renderItem = ({ item }) => (
     <CartItem item={item} onDelete={onHandlerDeleteItem} />
