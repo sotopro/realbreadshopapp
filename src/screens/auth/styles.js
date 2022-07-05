@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     container: {
+        height: 300,
         width: '80%',
         maxWidth: 400,
         padding: 15,
@@ -20,14 +21,6 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: "Lato-Bold",
         marginVertical: 5,
-    },
-    input: {
-        height: 40,
-        borderBottomColor: colors.primary,
-        borderBottomWidth: 1,
-        width: '90%',
-        fontFamily: "Lato-Regular",
-        marginBottom: 10,
     },
     title: {
         fontSize: 18,
